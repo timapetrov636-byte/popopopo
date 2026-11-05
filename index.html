@@ -189,9 +189,9 @@
     const myText = `Я тебя простила! Давай погуляем ${formatted} 💕`;
     
     // ВАЖНО: Вставь сюда свой юзернейм в Telegram (БЕЗ @)
-    const myTelegramUsername = 'ТВОЙ_НИК_В_ТЕЛЕГРАММЕ'; 
+    const myTelegramUsername = 'Rusterito'; 
     
-    const finalUrl = `https://t.me/${myTelegramUsername}?text=${encodeURIComponent(myText)}`;
+    const finalUrl = `tg://resolve?domain=${myTelegramUsername}?text=${encodeURIComponent(myText)}`;
     window.open(finalUrl, '_blank');
   });
 
