@@ -191,8 +191,15 @@
     // ВАЖНО: Вставь сюда свой юзернейм в Telegram (БЕЗ @)
     const myTelegramUsername = 'Rusterito'; 
     
-    const finalUrl = `tg://resolve?domain=${myTelegramUsername}?text=${encodeURIComponent(myText)}`;
-    window.open(finalUrl, '_blank');
+       // Пробуем открыть приложение Telegram
+    const appUrl = `tg://resolve?domain=${myTelegramUsername}&text=${encodeURIComponent(myText)}`;
+    window.location.href = appUrl;
+
+    // Если приложение не открылось за 1.5 секунды, открываем сайт
+    setTimeout(() => {
+        const webUrl = `https://t.me/${myTelegramUsername}?text=${encodeURIComponent(myText)}`;
+        window.open(webUrl, '_blank');
+    }, 1500);
   });
 
   // 5. Салют из сердечек
